@@ -1,0 +1,104 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/base";
+
+:root {
+  color-scheme: dark;
+  --base-bg: #0a0a0a;
+  --base-panel: #18181b;
+  --base-border: #2a2a2a;
+  --base-text: #e5e5e5;
+  --base-sub: #a1a1aa;
+  --base-hover: #232326;
+}
+
+html {
+  background: var(--base-bg);
+}
+
+body {
+  color: var(--base-text);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--base-text);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Links */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* subtle scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 9999px;
+  border: 2px solid var(--base-panel);
+}
+
+/* card styles */
+.card {
+  border-radius: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.18);
+  border-color: var(--base-border);
+  background: linear-gradient(120deg, var(--base-panel) 70%, var(--base-hover) 100%);
+  color: var(--base-text);
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover {
+  background-color: var(--base-panel);
+  transition-property: transform, color, background-color, border-color, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.03);
+  background-color: var(--base-hover);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.30);
+  border-color: #60a5fa;
+}
